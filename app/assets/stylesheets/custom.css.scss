@@ -1,1 +1,51 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+	background-color: #f8f9fa !important;	
+}
+
+.navbar-nav {
+	font-size: 18px;
+}
+
+#logo {
+	float: left;
+	font-size: 1.7em;	
+	text-transform: uppercase;
+	letter-spacing: -5px;
+	font-weight: bold;
+	width: 100px;
+}
+
+#logo:hover {
+	text-decoration: none;
+}
+
+.nav-link:hover {
+	color: blue;
+}
+
+#home-container {
+	margin-top: 25px;
+}
+
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Other Classes for Page Styling */
+
+
