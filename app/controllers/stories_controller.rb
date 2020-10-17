@@ -26,28 +26,22 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
 
-    respond_to do |format|
-      if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
-        format.json { render :show, status: :created, location: @story }
-      else
-        format.html { render :new }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
+    if @story.save
+      flash[:notice] = "Story was created successfully."
+      redirect_to @story
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /stories/1
   # PATCH/PUT /stories/1.json
   def update
-    respond_to do |format|
-      if @story.update(story_params)
-        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
-        format.json { render :show, status: :ok, location: @story }
-      else
-        format.html { render :edit }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
+    if @story.update(story_params)
+      flash[:notice] = "Story was updated successfully."
+      redirect_to @story
+    else
+      render 'edit'
     end
   end
 
