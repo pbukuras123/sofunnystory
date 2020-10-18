@@ -25,7 +25,7 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     @story = Story.new(story_params)
-
+    @story.user = User.first
     if @story.save
       flash[:notice] = "Story was created successfully."
       redirect_to @story
