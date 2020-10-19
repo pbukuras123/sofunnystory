@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-      <%= render 'shared/errors' %>
+      <%= render 'shared/errors', obj: @story %>
       <%= form_with(model: @story, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |form| %>
         <div class="form-group row">
           <%= form.label :title, class: "col-2 col-form-label text-light" %>
@@ -16,7 +16,7 @@
             <div class="col-10">
               <%= form.text_area :story, rows: 10, class: "form-control shadow rounded", placeholder: "Let's hear it!" %>
             </div>
-        </div>
+        </div>   
 
         <div class="form-group row justify-content-center">
           <%= form.submit class: "btn btn-outline-light btn-lg" %>
