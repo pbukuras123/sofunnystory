@@ -4,7 +4,9 @@
       <div class="col-8 mt-4">
         <div class="card text-center shadow-sm mb-5 bg-white rounded">
           <div class="card-header font-italic">
-            by <%= story.user.username %>
+            <% if story.user %>
+              by <%= link_to story.user.username, user_path(story.user) %>
+            <% end %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to story.title, story_path(story), class: "text-success" %></h5>
